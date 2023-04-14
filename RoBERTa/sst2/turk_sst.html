@@ -1,0 +1,169 @@
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!-- You must include this JavaScript file -->
+<script src="https://assets.crowd.aws/crowd-html-elements.js"></script>
+
+<div style="padding-top: 2em;  padding-right: 2em;  padding-bottom: 2em;  padding-left: 2em;">
+    <!--Instruction area beings-->
+    <div class="row">
+        <p>
+            <button class="btn btn-primary btn-lg" type="button" data-toggle="collapse"
+                    data-target="#instruction_collapse"
+                    aria-expanded="false" aria-controls="instruction_collapse">
+                Click for Instructions
+            </button>
+        </p>
+    </div>
+    <div class="row">
+        <div class="collapse" id="instruction_collapse">
+            <div class="card card-body">
+                Choose the primary sentiment that is expressed by the following movie review. <br>
+                Please pay close attention to the highlighted words to help you make your decision. <br>
+                Words highlighted in green carry positive sentiments. Words highlighted in red carry negative
+                sentiments.
+                The darker the shade the stronger the sentiment. <br>
+                You may not agree with the colors and sentiments that certain words carry. You will have a chance to
+                reflect your thoughts on this in the answers.
+
+            </div>
+        </div>
+    </div>
+    <!--Instruction area ends-->
+
+
+    <hr/>
+    <br>
+
+    <!--    divide the next part of the page into two columns-->
+    <div class="row">
+        <div class="col-6">
+            <!--movie review area begins-->
+            <div class="sticky-top">
+                <h3>Review #${review_number}:</h3>
+                <!--legend header-->
+                <div style="border-bottom: 1px solid; margin-top: 5px; padding-top: 5px; display: inline-block; float: right;">
+                    <b>Legend: </b><span
+                        style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(0, 75%, 60%)"></span>
+                    Negative <span
+                        style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(0, 75%, 100%)"></span>
+                    Neutral <span
+                        style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(120, 75%, 50%)"></span>
+                    Positive
+                </div>
+
+                ${review}
+
+            </div>
+            <!--movie review area ends-->
+
+        </div>
+
+
+        <div class="col-6">
+            <!--metric collecting area begins-->
+            <h3>Please answer the follwoing questions:</h3>
+
+            <crowd-form>
+                <form>
+                    <h3>Question 1)</h3>
+                    <fieldset class="form-group">
+                        <div class="row">
+                            <legend class="col-form-label col-lg">The primary sentiment expressed by the review was:
+                            </legend>
+                            <div class="col-lg">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sentiment_radio"
+                                           id="negative_radio" value="0">
+                                    <label class="form-check-label" for="negative_radio">
+                                        Negative
+                                    </label>
+                                </div>
+                                <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="sentiment_radio"
+                                           id="positive_radio" value="1">
+                                    <label class="form-check-label" for="positive_radio">
+                                        Positive
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <h3>Question 2)</h3>
+                        <label name='non_red_label' for="non_red_in">
+                            In the review, are there any words that are highlighted in RED that you think should NOT be
+                            highlighted in RED?
+                            (Are there RED words that you do not consider to be negative words?) If there are, please
+                            list them in the following textbox. Separate the words in your answer
+                            with commas. <br>
+                            For example: great, boring, surprising
+                        </label>
+                        <input name="non_red_in" type="text" class="form-control" id="non_red_in"
+                               placeholder="great, boring, surprising">
+                        <br>
+                        <h3>Question 3)</h3>
+                        <label name='non_green_label' for="non_green_in">
+                            In the review, are there any words that are highlighted in GREEN that you think should NOT
+                            be highlighted in GREEN?
+                            (Are there GREEN words that you do not consider to be positive words?) If there are, please
+                            list them in the following textbox. Separate the words in your answer
+                            with commas. <br>
+                            For example: great, boring, surprising
+                        </label>
+                        <input name="non_green_in" type="text" class="form-control" id="non_green_in"
+                               placeholder="great, boring, surprising">
+                        <br>
+
+                        <h3>Question 4)</h3>
+                        <label name='fiat_red_label' for="fiat_red_in">
+                            In the review, are there any words that are NOT highlighted in RED that you think should
+                            have been highlighted in RED?
+                            (Are there negative words that were not identified?) If there are, please list them in the
+                            following textbox. Separate the words in your answer
+                            with commas. <br>
+                            For example: great, boring, surprising
+                        </label>
+                        <input name="fiat_red_in" type="text" class="form-control" id="fiat_red_in"
+                               placeholder="great, boring, surprising">
+                        <br>
+                        <h3>Question 5)</h3>
+                        <label name='fiat_green_label' for="fiat_green_in">
+                            In the review, are there any words that are NOT highlighted in GREEN that you think should
+                            should have been highlighted in GREEN?
+                            (Are there positive words that were not identified? <br>
+                            (If there are, please list them in the following textbox. Separate the words in your answer
+                            with commas.) <br>
+                            For example: great, boring, surprising
+                        </label>
+                        <input name="fiat_green_in" type="text" class="form-control" id="fiat_green_in"
+                               placeholder="great, boring, surprising">
+                        <br>
+                    </div>
+                </form>
+
+                <crowd-button form-action="submit">
+                    Submit Answer
+                </crowd-button>
+            </crowd-form>
+            <!--metric collecting area ends-->
+
+        </div>
+    </div>
+
+    <br>
+
+
+</div>
+
+

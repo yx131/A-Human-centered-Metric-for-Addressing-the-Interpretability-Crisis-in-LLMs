@@ -1,0 +1,93 @@
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!-- You must include this JavaScript file -->
+<body>
+<div style="padding-top: 2em;  padding-right: 2em;  padding-bottom: 2em;  padding-left: 2em;">
+    <!--Instruction area beings-->
+    <div class="row">
+        <p>
+            <button class="btn btn-primary btn-lg" type="button" data-toggle="collapse"
+                    data-target="#instruction_collapse"
+                    aria-expanded="false" aria-controls="instruction_collapse">
+                Click for Instructions
+            </button>
+        </p>
+    </div>
+    <div class="row">
+        <div class="collapse" id="instruction_collapse">
+            <div class="card card-body font-weight-bold">
+                - The following are explanations of decisions made by a deep learning model. <br>
+                - The model was trained to predict whether or not a paragraph contains the answer to the question posed. <br>
+                - For the sake of simplicity, we use the word "entailment" to mean that the paragraph contains the answer to the question. <br>
+                - Similarly, we use the word "non-entailment" to mean that the paragraph does not contain the answer to the question. <br>
+                - Words highlighted in green contributed to the positive decision, i.e. "entailment". <br>
+                - Words highlighted in red contributed to the negative decision, i.e. "non-entailment". <br>
+                - The darker the shade the stronger the contribution. <br>
+                - The words [BEGIN] and [END] mark the beginning and end of the question and the paragraph. <br>
+                - [BEGIN] and [END] can also make contributions. <br>
+                - Please answer the question to the right for each explanation that is provided.
+            </div>
+        </div>
+    </div>
+    <!--Instruction area ends-->
+    <hr/>
+    <br>
+
+    [TO REPLACE USABILITY SAMPLES]
+
+    <br>
+
+    <button type="button" class="btn btn-warning" id="gen_csv">Finish and Generate CSV</button>
+</div>
+
+<script>
+        function downloadBlob(content, filename, contentType) {
+          // Create a blob
+          var blob = new Blob([content], { type: contentType });
+          var url = URL.createObjectURL(blob);
+
+          // Create a link to download it
+          var pom = document.createElement('a');
+          pom.href = url;
+          pom.setAttribute('download', filename);
+          pom.click();
+        }
+
+	    function displayMessage(){
+	        console.log('Gen CSV  button has been clicked.')
+	        csv_content = 'data:text/csv;charset=utf-8,'
+	        csv_content = 'example_num,understanding\n'
+	        var ele = document.getElementsByTagName('input');
+            for (i = 0; i < ele.length; i++) {
+                csv_content += i
+                csv_content += ','
+                csv_content += ele[i].value
+                csv_content += '\n'
+
+
+                console.log('Value: ' + ele[i].value);
+                for (j = 0; j < ele[i].attributes.length; j++) {
+                        console.log(ele[i].attributes[j]);
+                }
+            }
+            downloadBlob(csv_content, 'understanding_ratings.csv', 'text/csv;charset=utf-8;')
+	    }
+	    var btn = document.getElementById("gen_csv");
+	    btn.addEventListener("click", displayMessage);
+
+
+</script>
+
+</body>
+
+

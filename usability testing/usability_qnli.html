@@ -1,0 +1,328 @@
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<!-- You must include this JavaScript file -->
+
+<div style="padding-top: 2em;  padding-right: 2em;  padding-bottom: 2em;  padding-left: 2em;">
+    <!--Instruction area beings-->
+    <div class="row">
+        <p>
+            <button class="btn btn-primary btn-lg" type="button" data-toggle="collapse"
+                    data-target="#instruction_collapse"
+                    aria-expanded="false" aria-controls="instruction_collapse">
+                Click for Instructions
+            </button>
+        </p>
+    </div>
+    <div class="row">
+        <div class="collapse" id="instruction_collapse">
+            <div class="card card-body font-weight-bold">
+                - The following are explanations of decisions made by a deep learning model. <br>
+                - The model was trained to predict whether or not a paragraph contains the answer to the question posed. <br>
+                - For the sake of simplicity, we use the word "entailment" to mean that the paragraph contains the answer to the question. <br>
+                - Similarly, we use the word "non-entailment" to mean that the paragraph does not contain the answer to the question. <br>
+                - Words highlighted in green contributed to the positive decision, i.e. "entailment". <br>
+                - Words highlighted in red contributed to the negative decision, i.e. "non-entailment". <br>
+                - The darker the shade the stronger the contribution. <br>
+                - The words [BEGIN] and [END] mark the beginning and end of the question and the paragraph. <br>
+                - [BEGIN] and [END] can also make contributions. <br>
+                - Please answer the question to the right for each explanation that is provided.
+            </div>
+        </div>
+    </div>
+    <!--Instruction area ends-->
+
+
+    <hr/>
+    <br>
+
+    <!--    divide the next part of the page into two columns-->
+    <div class="row">
+        <div class="col-6">
+            <p>
+                <em>
+                             </em>
+            </p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="sticky-top">
+                <!--legend header-->
+                <div style="border-bottom: 1px solid; margin-top: 5px; padding-top: 5px; display: inline-block; float: left;">
+                    <h4>Example #1:</h4>
+                    <b>Legend: </b>
+                    <span style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(0, 75%, 60%)"></span>
+                    Non-entailment
+                    <span style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(0, 75%, 100%)"></span>
+                    Neutral <span style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(120, 75%, 50%)"></span>
+                    Entailment
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <h4>Question Posed:</h4>
+                   <mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> [BEGIN]                    </font></mark><mark style="background-color: hsl(120, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> What                    </font></mark><mark style="background-color: hsl(0, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> would                    </font></mark><mark style="background-color: hsl(120, 75%, 88%); opacity:1.0;                     line-height:1.75"><font color="black"> a                    </font></mark><mark style="background-color: hsl(0, 75%, 87%); opacity:1.0;                     line-height:1.75"><font color="black"> teacher                    </font></mark><mark style="background-color: hsl(0, 75%, 90%); opacity:1.0;                     line-height:1.75"><font color="black"> assess                    </font></mark><mark style="background-color: hsl(120, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> the                    </font></mark><mark style="background-color: hsl(0, 75%, 88%); opacity:1.0;                     line-height:1.75"><font color="black"> levels                    </font></mark><mark style="background-color: hsl(120, 75%, 92%); opacity:1.0;                     line-height:1.75"><font color="black"> of                    </font></mark><mark style="background-color: hsl(0, 75%, 93%); opacity:1.0;                     line-height:1.75"><font color="black"> a                    </font></mark><mark style="background-color: hsl(0, 75%, 93%); opacity:1.0;                     line-height:1.75"><font color="black"> student                    </font></mark><mark style="background-color: hsl(120, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> on?                    </font></mark><mark style="background-color: hsl(120, 75%, 92%); opacity:1.0;                     line-height:1.75"><font color="black"> [END]                    </font></mark><mark style="background-color: hsl(120, 75%, 88%); opacity:1.0;                     line-height:1.75"><font color="black">
+                <br>
+                <br>
+                <h3>Paragraph:</h3>
+                   [BEGIN]                    </font></mark><mark style="background-color: hsl(0, 75%, 94%); opacity:1.0;                     line-height:1.75"><font color="black"> For                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> example,                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> an                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> experienced                    </font></mark><mark style="background-color: hsl(0, 75%, 91%); opacity:1.0;                     line-height:1.75"><font color="black"> teacher                    </font></mark><mark style="background-color: hsl(120, 75%, 94%); opacity:1.0;                     line-height:1.75"><font color="black"> and                    </font></mark><mark style="background-color: hsl(0, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> parent                    </font></mark><mark style="background-color: hsl(120, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> described                    </font></mark><mark style="background-color: hsl(0, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> the                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> place                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> of                    </font></mark><mark style="background-color: hsl(0, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> a                    </font></mark><mark style="background-color: hsl(0, 75%, 93%); opacity:1.0;                     line-height:1.75"><font color="black"> teacher                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> in                    </font></mark><mark style="background-color: hsl(0, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> learning                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> as                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> follows:                    </font></mark><mark style="background-color: hsl(0, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> "The                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> real                    </font></mark><mark style="background-color: hsl(120, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> bulk                    </font></mark><mark style="background-color: hsl(120, 75%, 95%); opacity:1.0;                     line-height:1.75"><font color="black"> of                    </font></mark><mark style="background-color: hsl(0, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> learning                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> takes                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> place                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> in                    </font></mark><mark style="background-color: hsl(0, 75%, 94%); opacity:1.0;                     line-height:1.75"><font color="black"> self-study                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> and                    </font></mark><mark style="background-color: hsl(0, 75%, 93%); opacity:1.0;                     line-height:1.75"><font color="black"> problem                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> solving                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> with                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> a                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> lot                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> of                    </font></mark><mark style="background-color: hsl(0, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> feedback                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> around                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> that                    </font></mark><mark style="background-color: hsl(120, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> loop.                    </font></mark><mark style="background-color: hsl(120, 75%, 95%); opacity:1.0;                     line-height:1.75"><font color="black"> [END]                    </font></mark>
+            </div>
+
+        </div>
+        <div class="col-6">
+            <!--metric collecting area begins-->
+            <br>
+            <br>
+            <br>
+            <br>
+            <form>
+                <div>
+                    <h3>Rate your understanding</h3>
+                    <label name='understand_number_label' for="understand_number">
+                        How well did you understand the decision-making process of the ML model on this example? <br>
+                        Rate your understanding on a scale of 0-5, with 0 representing that you did not understand the process at all and
+                        5 representing that you understood the process very well.
+                    </label>
+                    <input name="understand_number" type="number" class="form-control" id="understand_number"
+                           placeholder="e.g. 2.5">
+                    <br>
+                </div>
+            </form>
+
+
+            <!--metric collecting area ends-->
+
+        </div>
+    </div>
+    <hr><br>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="sticky-top">
+                <!--legend header-->
+                <div style="border-bottom: 1px solid; margin-top: 5px; padding-top: 5px; display: inline-block; float: left;">
+                    <h4>Example #2:</h4>
+                    <b>Legend: </b>
+                    <span style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(0, 75%, 60%)"></span>
+                    Non-entailment
+                    <span style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(0, 75%, 100%)"></span>
+                    Neutral <span style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(120, 75%, 50%)"></span>
+                    Entailment
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <h4>Question Posed:</h4>
+                   <mark style="background-color: hsl(120, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> [BEGIN]                    </font></mark><mark style="background-color: hsl(120, 75%, 87%); opacity:1.0;                     line-height:1.75"><font color="black"> What                    </font></mark><mark style="background-color: hsl(0, 75%, 92%); opacity:1.0;                     line-height:1.75"><font color="black"> company                    </font></mark><mark style="background-color: hsl(0, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> created                    </font></mark><mark style="background-color: hsl(0, 75%, 90%); opacity:1.0;                     line-height:1.75"><font color="black"> Doctor                    </font></mark><mark style="background-color: hsl(120, 75%, 93%); opacity:1.0;                     line-height:1.75"><font color="black"> Who?                    </font></mark><mark style="background-color: hsl(120, 75%, 93%); opacity:1.0;                     line-height:1.75"><font color="black"> [END]                    </font></mark><mark style="background-color: hsl(120, 75%, 83%); opacity:1.0;                     line-height:1.75"><font color="black">
+                <br>
+                <br>
+                <h3>Paragraph:</h3>
+                   [BEGIN]                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> Who                    </font></mark><mark style="background-color: hsl(0, 75%, 90%); opacity:1.0;                     line-height:1.75"><font color="black"> character                    </font></mark><mark style="background-color: hsl(120, 75%, 94%); opacity:1.0;                     line-height:1.75"><font color="black"> by                    </font></mark><mark style="background-color: hsl(0, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> BBC                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> Television                    </font></mark><mark style="background-color: hsl(0, 75%, 88%); opacity:1.0;                     line-height:1.75"><font color="black"> in                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> the                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> early                    </font></mark><mark style="background-color: hsl(0, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> 1960s,                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> a                    </font></mark><mark style="background-color: hsl(120, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> myriad                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> of                    </font></mark><mark style="background-color: hsl(120, 75%, 91%); opacity:1.0;                     line-height:1.75"><font color="black"> stories                    </font></mark><mark style="background-color: hsl(0, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> have                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> been                    </font></mark><mark style="background-color: hsl(0, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> published                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> about                    </font></mark><mark style="background-color: hsl(0, 75%, 83%); opacity:1.0;                     line-height:1.75"><font color="black"> Doctor                    </font></mark><mark style="background-color: hsl(120, 75%, 90%); opacity:1.0;                     line-height:1.75"><font color="black"> Who,                    </font></mark><mark style="background-color: hsl(0, 75%, 95%); opacity:1.0;                     line-height:1.75"><font color="black"> in                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> different                    </font></mark><mark style="background-color: hsl(120, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> media:                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> apart                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> from                    </font></mark><mark style="background-color: hsl(0, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> the                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> actual                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> television                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> episodes                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> that                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> continue                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> to                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> be                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> produced                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> by                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> the                    </font></mark><mark style="background-color: hsl(120, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> BBC,                    </font></mark><mark style="background-color: hsl(120, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> there                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> have                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> also                    </font></mark><mark style="background-color: hsl(120, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> been                    </font></mark><mark style="background-color: hsl(0, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> novels,                    </font></mark><mark style="background-color: hsl(0, 75%, 95%); opacity:1.0;                     line-height:1.75"><font color="black"> comics,                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> short                    </font></mark><mark style="background-color: hsl(120, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> stories,                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> audio                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> books,                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> radio                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> plays,                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> interactive                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> video                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> games,                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> game                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> books,                    </font></mark><mark style="background-color: hsl(120, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> webcasts,                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> DVD                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> extras,                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> and                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> even                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> stage                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> performances.                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> [END]                    </font></mark>
+            </div>
+
+        </div>
+        <div class="col-6">
+            <!--metric collecting area begins-->
+            <br>
+            <br>
+            <br>
+            <br>
+            <form>
+                <div>
+                    <h3>Rate your understanding</h3>
+                    <label name='understand_number_label' for="understand_number_2">
+                        How well did you understand the decision-making process of the ML model on this example? <br>
+                        Rate your understanding on a scale of 0-5, with 0 representing that you did not understand the process at all and
+                        5 representing that you understood the process very well.
+                    </label>
+                    <input name="understand_number_2" type="number" class="form-control" id="understand_number_2"
+                           placeholder="e.g. 2.5">
+                    <br>
+                </div>
+            </form>
+
+
+            <!--metric collecting area ends-->
+
+        </div>
+    </div>
+    <hr><br>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="sticky-top">
+                <!--legend header-->
+                <div style="border-bottom: 1px solid; margin-top: 5px; padding-top: 5px; display: inline-block; float: left;">
+                    <h4>Example #3:</h4>
+                    <b>Legend: </b>
+                    <span style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(0, 75%, 60%)"></span>
+                    Non-entailment
+                    <span style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(0, 75%, 100%)"></span>
+                    Neutral <span style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(120, 75%, 50%)"></span>
+                    Entailment
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <h4>Question Posed:</h4>
+                   <mark style="background-color: hsl(0, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> [BEGIN]                    </font></mark><mark style="background-color: hsl(120, 75%, 94%); opacity:1.0;                     line-height:1.75"><font color="black"> What                    </font></mark><mark style="background-color: hsl(0, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> was                    </font></mark><mark style="background-color: hsl(120, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> the                    </font></mark><mark style="background-color: hsl(0, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> name                    </font></mark><mark style="background-color: hsl(120, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> of                    </font></mark><mark style="background-color: hsl(120, 75%, 93%); opacity:1.0;                     line-height:1.75"><font color="black"> the                    </font></mark><mark style="background-color: hsl(0, 75%, 92%); opacity:1.0;                     line-height:1.75"><font color="black"> Media                    </font></mark><mark style="background-color: hsl(0, 75%, 86%); opacity:1.0;                     line-height:1.75"><font color="black"> Day                    </font></mark><mark style="background-color: hsl(120, 75%, 85%); opacity:1.0;                     line-height:1.75"><font color="black"> event                    </font></mark><mark style="background-color: hsl(120, 75%, 94%); opacity:1.0;                     line-height:1.75"><font color="black"> for                    </font></mark><mark style="background-color: hsl(0, 75%, 88%); opacity:1.0;                     line-height:1.75"><font color="black"> Super                    </font></mark><mark style="background-color: hsl(120, 75%, 95%); opacity:1.0;                     line-height:1.75"><font color="black"> Bowl                    </font></mark><mark style="background-color: hsl(120, 75%, 89%); opacity:1.0;                     line-height:1.75"><font color="black"> 50?                    </font></mark><mark style="background-color: hsl(120, 75%, 94%); opacity:1.0;                     line-height:1.75"><font color="black"> [END]                    </font></mark><mark style="background-color: hsl(120, 75%, 92%); opacity:1.0;                     line-height:1.75"><font color="black">
+                <br>
+                <br>
+                <h3>Paragraph:</h3>
+                   [BEGIN]                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> The                    </font></mark><mark style="background-color: hsl(120, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> game's                    </font></mark><mark style="background-color: hsl(120, 75%, 92%); opacity:1.0;                     line-height:1.75"><font color="black"> media                    </font></mark><mark style="background-color: hsl(120, 75%, 93%); opacity:1.0;                     line-height:1.75"><font color="black"> day,                    </font></mark><mark style="background-color: hsl(0, 75%, 90%); opacity:1.0;                     line-height:1.75"><font color="black"> which                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> was                    </font></mark><mark style="background-color: hsl(120, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> typically                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> held                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> on                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> the                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> Tuesday                    </font></mark><mark style="background-color: hsl(120, 75%, 95%); opacity:1.0;                     line-height:1.75"><font color="black"> afternoon                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> prior                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> to                    </font></mark><mark style="background-color: hsl(120, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> the                    </font></mark><mark style="background-color: hsl(120, 75%, 93%); opacity:1.0;                     line-height:1.75"><font color="black"> game,                    </font></mark><mark style="background-color: hsl(120, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> was                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> moved                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> to                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> the                    </font></mark><mark style="background-color: hsl(0, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> Monday                    </font></mark><mark style="background-color: hsl(120, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> evening                    </font></mark><mark style="background-color: hsl(120, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> and                    </font></mark><mark style="background-color: hsl(120, 75%, 83%); opacity:1.0;                     line-height:1.75"><font color="black"> re-branded                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> as                    </font></mark><mark style="background-color: hsl(0, 75%, 91%); opacity:1.0;                     line-height:1.75"><font color="black"> Super                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> Bowl                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> Opening                    </font></mark><mark style="background-color: hsl(0, 75%, 90%); opacity:1.0;                     line-height:1.75"><font color="black"> Night.                    </font></mark><mark style="background-color: hsl(0, 75%, 94%); opacity:1.0;                     line-height:1.75"><font color="black"> [END]                    </font></mark>
+            </div>
+
+        </div>
+        <div class="col-6">
+            <!--metric collecting area begins-->
+            <br>
+            <br>
+            <br>
+            <br>
+            <form>
+                <div>
+                    <h3>Rate your understanding</h3>
+                    <label name='understand_number_label' for="understand_number_3">
+                        How well did you understand the decision-making process of the ML model on this example? <br>
+                        Rate your understanding on a scale of 0-5, with 0 representing that you did not understand the process at all and
+                        5 representing that you understood the process very well.
+                    </label>
+                    <input name="understand_number_3" type="number" class="form-control" id="understand_number_3"
+                           placeholder="e.g. 2.5">
+                    <br>
+                </div>
+            </form>
+
+
+            <!--metric collecting area ends-->
+
+        </div>
+    </div>
+    <hr><br>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="sticky-top">
+                <!--legend header-->
+                <div style="border-bottom: 1px solid; margin-top: 5px; padding-top: 5px; display: inline-block; float: left;">
+                    <h4>Example #5:</h4>
+                    <b>Legend: </b>
+                    <span style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(0, 75%, 60%)"></span>
+                    Non-entailment
+                    <span style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(0, 75%, 100%)"></span>
+                    Neutral <span style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(120, 75%, 50%)"></span>
+                    Entailment
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <h4>Question Posed:</h4>
+                   <mark style="background-color: hsl(0, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> [BEGIN]                    </font></mark><mark style="background-color: hsl(120, 75%, 75%); opacity:1.0;                     line-height:1.75"><font color="black"> How                    </font></mark><mark style="background-color: hsl(0, 75%, 89%); opacity:1.0;                     line-height:1.75"><font color="black"> many                    </font></mark><mark style="background-color: hsl(0, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> Doctor                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> Who                    </font></mark><mark style="background-color: hsl(0, 75%, 95%); opacity:1.0;                     line-height:1.75"><font color="black"> soundtracks                    </font></mark><mark style="background-color: hsl(120, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> have                    </font></mark><mark style="background-color: hsl(120, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> been                    </font></mark><mark style="background-color: hsl(0, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> released                    </font></mark><mark style="background-color: hsl(120, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> since                    </font></mark><mark style="background-color: hsl(0, 75%, 90%); opacity:1.0;                     line-height:1.75"><font color="black"> 2005?                    </font></mark><mark style="background-color: hsl(120, 75%, 87%); opacity:1.0;                     line-height:1.75"><font color="black"> [END]                    </font></mark><mark style="background-color: hsl(0, 75%, 93%); opacity:1.0;                     line-height:1.75"><font color="black">
+                <br>
+                <br>
+                <h3>Paragraph:</h3>
+                   [BEGIN]                    </font></mark><mark style="background-color: hsl(120, 75%, 87%); opacity:1.0;                     line-height:1.75"><font color="black"> The                    </font></mark><mark style="background-color: hsl(0, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> fourth                    </font></mark><mark style="background-color: hsl(120, 75%, 90%); opacity:1.0;                     line-height:1.75"><font color="black"> was                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> released                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> on                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> 4                    </font></mark><mark style="background-color: hsl(120, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> October                    </font></mark><mark style="background-color: hsl(120, 75%, 90%); opacity:1.0;                     line-height:1.75"><font color="black"> 2010                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> as                    </font></mark><mark style="background-color: hsl(0, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> a                    </font></mark><mark style="background-color: hsl(0, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> two                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> disc                    </font></mark><mark style="background-color: hsl(0, 75%, 94%); opacity:1.0;                     line-height:1.75"><font color="black"> special                    </font></mark><mark style="background-color: hsl(0, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> edition                    </font></mark><mark style="background-color: hsl(120, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> and                    </font></mark><mark style="background-color: hsl(0, 75%, 95%); opacity:1.0;                     line-height:1.75"><font color="black"> contained                    </font></mark><mark style="background-color: hsl(0, 75%, 94%); opacity:1.0;                     line-height:1.75"><font color="black"> music                    </font></mark><mark style="background-color: hsl(0, 75%, 95%); opacity:1.0;                     line-height:1.75"><font color="black"> from                    </font></mark><mark style="background-color: hsl(0, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> the                    </font></mark><mark style="background-color: hsl(120, 75%, 85%); opacity:1.0;                     line-height:1.75"><font color="black"> 2008-2010                   </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> specials                    </font></mark><mark style="background-color: hsl(0, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> (The                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> Next                    </font></mark><mark style="background-color: hsl(0, 75%, 95%); opacity:1.0;                     line-height:1.75"><font color="black"> Doctor                    </font></mark><mark style="background-color: hsl(0, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> to                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> End                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> of                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> Time                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> Part                    </font></mark><mark style="background-color: hsl(120, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> 2).                    </font></mark><mark style="background-color: hsl(120, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> [END]                    </font></mark>
+            </div>
+
+        </div>
+        <div class="col-6">
+            <!--metric collecting area begins-->
+            <br>
+            <br>
+            <br>
+            <br>
+            <form>
+                <div>
+                    <h3>Rate your understanding</h3>
+                    <label name='understand_number_label' for="understand_number_4">
+                        How well did you understand the decision-making process of the ML model on this example? <br>
+                        Rate your understanding on a scale of 0-5, with 0 representing that you did not understand the process at all and
+                        5 representing that you understood the process very well.
+                    </label>
+                    <input name="understand_number_4" type="number" class="form-control" id="understand_number_4"
+                           placeholder="e.g. 2.5">
+                    <br>
+                </div>
+            </form>
+
+
+            <!--metric collecting area ends-->
+
+        </div>
+    </div>
+    <hr><br>
+
+    <div class="row">
+        <div class="col-6">
+            <div class="sticky-top">
+                <!--legend header-->
+                <div style="border-bottom: 1px solid; margin-top: 5px; padding-top: 5px; display: inline-block; float: left;">
+                    <h4>Example #5:</h4>
+                    <b>Legend: </b>
+                    <span style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(0, 75%, 60%)"></span>
+                    Non-entailment
+                    <span style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(0, 75%, 100%)"></span>
+                    Neutral <span style="display: inline-block; width: 10px; height: 10px;                 border: 1px solid; background-color:                 hsl(120, 75%, 50%)"></span>
+                    Entailment
+                </div>
+
+                <br>
+                <br>
+                <br>
+                <h4>Question Posed:</h4>
+                   <mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> [BEGIN]                    </font></mark><mark style="background-color: hsl(120, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> What                    </font></mark><mark style="background-color: hsl(120, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> is                    </font></mark><mark style="background-color: hsl(0, 75%, 94%); opacity:1.0;                     line-height:1.75"><font color="black"> the                    </font></mark><mark style="background-color: hsl(0, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> name                    </font></mark><mark style="background-color: hsl(120, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> of                    </font></mark><mark style="background-color: hsl(120, 75%, 91%); opacity:1.0;                     line-height:1.75"><font color="black"> the                    </font></mark><mark style="background-color: hsl(120, 75%, 85%); opacity:1.0;                     line-height:1.75"><font color="black"> country's                    </font></mark><mark style="background-color: hsl(120, 75%, 88%); opacity:1.0;                     line-height:1.75"><font color="black"> longest                    </font></mark><mark style="background-color: hsl(0, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> continuously                    </font></mark><mark style="background-color: hsl(0, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> running                    </font></mark><mark style="background-color: hsl(120, 75%, 95%); opacity:1.0;                     line-height:1.75"><font color="black"> student                    </font></mark><mark style="background-color: hsl(0, 75%, 93%); opacity:1.0;                     line-height:1.75"><font color="black"> film                    </font></mark><mark style="background-color: hsl(0, 75%, 94%); opacity:1.0;                     line-height:1.75"><font color="black"> society?                    </font></mark><mark style="background-color: hsl(120, 75%, 93%); opacity:1.0;                     line-height:1.75"><font color="black"> [END]                    </font></mark><mark style="background-color: hsl(120, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black">
+                <br>
+                <br>
+                <h3>Paragraph:</h3>
+                   [BEGIN]                    </font></mark><mark style="background-color: hsl(120, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> Students                    </font></mark><mark style="background-color: hsl(120, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> at                    </font></mark><mark style="background-color: hsl(0, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> the                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> University                    </font></mark><mark style="background-color: hsl(120, 75%, 91%); opacity:1.0;                     line-height:1.75"><font color="black"> of                    </font></mark><mark style="background-color: hsl(0, 75%, 72%); opacity:1.0;                     line-height:1.75"><font color="black"> Chicago                    </font></mark><mark style="background-color: hsl(0, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> run                    </font></mark><mark style="background-color: hsl(120, 75%, 96%); opacity:1.0;                     line-height:1.75"><font color="black"> over                    </font></mark><mark style="background-color: hsl(120, 75%, 94%); opacity:1.0;                     line-height:1.75"><font color="black"> 400                    </font></mark><mark style="background-color: hsl(0, 75%, 97%); opacity:1.0;                     line-height:1.75"><font color="black"> clubs                    </font></mark><mark style="background-color: hsl(120, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> and                    </font></mark><mark style="background-color: hsl(0, 75%, 92%); opacity:1.0;                     line-height:1.75"><font color="black"> organizations                    </font></mark><mark style="background-color: hsl(120, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> known                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> as                    </font></mark><mark style="background-color: hsl(120, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> Recognized                    </font></mark><mark style="background-color: hsl(120, 75%, 93%); opacity:1.0;                     line-height:1.75"><font color="black"> Student                    </font></mark><mark style="background-color: hsl(0, 75%, 100%); opacity:1.0;                     line-height:1.75"><font color="black"> Organizations                    </font></mark><mark style="background-color: hsl(0, 75%, 98%); opacity:1.0;                     line-height:1.75"><font color="black"> (RSOs).                    </font></mark><mark style="background-color: hsl(0, 75%, 99%); opacity:1.0;                     line-height:1.75"><font color="black"> [END]                    </font></mark>
+            </div>
+
+        </div>
+        <div class="col-6">
+            <!--metric collecting area begins-->
+            <br>
+            <br>
+            <br>
+            <br>
+            <form>
+                <div>
+                    <h3>Rate your understanding</h3>
+                    <label name='understand_number_label' for="understand_number_5">
+                        How well did you understand the decision-making process of the ML model on this example? <br>
+                        Rate your understanding on a scale of 0-5, with 0 representing that you did not understand the process at all and
+                        5 representing that you understood the process very well.
+                    </label>
+                    <input name="understand_number_5" type="number" class="form-control" id="understand_number_5"
+                           placeholder="e.g. 2.5">
+                    <br>
+                </div>
+            </form>
+
+
+            <!--metric collecting area ends-->
+
+        </div>
+    </div>
+    <hr><br>
+
+    <br>
+
+
+</div>
+
+
